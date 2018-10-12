@@ -60,6 +60,7 @@ class ItemManagerTests: XCTestCase {
         XCTAssertEqual(sut.item(at: 0).title, "Second")
     }
     
+    
     func test_DoneItemAt_ReturnsCheckedItem() {
         let item = ToDoItem(title: "Foo")
         sut.add(item)
