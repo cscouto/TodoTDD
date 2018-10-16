@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		757F6454217632330030844E /* ItemListDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757F6453217632330030844E /* ItemListDataProvider.swift */; };
 		75ACEDDC216E9EA400AEE185 /* TodoItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75ACEDDB216E9EA400AEE185 /* TodoItemTests.swift */; };
 		75ACEDDE216EA04500AEE185 /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75ACEDDD216EA04500AEE185 /* ToDoItem.swift */; };
 		75ACEDE0216EA5A900AEE185 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75ACEDDF216EA5A900AEE185 /* Location.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		757F6453217632330030844E /* ItemListDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListDataProvider.swift; sourceTree = "<group>"; };
 		75ACEDDB216E9EA400AEE185 /* TodoItemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItemTests.swift; sourceTree = "<group>"; };
 		75ACEDDD216EA04500AEE185 /* ToDoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItem.swift; sourceTree = "<group>"; };
 		75ACEDDF216EA5A900AEE185 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				75DDD172216E940800CA7959 /* Assets.xcassets */,
 				75DDD174216E940800CA7959 /* LaunchScreen.storyboard */,
 				75DDD177216E940800CA7959 /* Info.plist */,
+				757F6453217632330030844E /* ItemListDataProvider.swift */,
 			);
 			path = ToDo;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				75ACEDEB216EABDA00AEE185 /* ItemManager.swift in Sources */,
+				757F6454217632330030844E /* ItemListDataProvider.swift in Sources */,
 				75DDD16C216E940700CA7959 /* AppDelegate.swift in Sources */,
 				75ACEDE0216EA5A900AEE185 /* Location.swift in Sources */,
 				75ACEDDE216EA04500AEE185 /* ToDoItem.swift in Sources */,
