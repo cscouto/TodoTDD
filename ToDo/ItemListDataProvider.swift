@@ -8,6 +8,11 @@
 
 import UIKit
 
+enum Section: Int {
+    case toDo
+    case done
+}
+
 class ItemListDataProvider: NSObject, UITableViewDataSource, UITableViewDelegate {
     var itemManager: ItemManager?
     
@@ -16,11 +21,21 @@ class ItemListDataProvider: NSObject, UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return itemManager?.toDoCount ?? 0
+        guard let itemManager = itemManager else { return 0 }
+        guard let itemSection = Section(rawValue: section) else {
+            fatalError()
+        }
+        
+        switch itemSection {
+        case .toDo:
+            return itemManager.toDoCount
+        case .done:
+            return itemManager.doneCount
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        return tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath)
     }
 
 }
