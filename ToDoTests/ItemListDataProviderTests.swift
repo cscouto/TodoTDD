@@ -81,12 +81,13 @@ class ItemListDataProviderTests: XCTestCase {
         let mockView = MockTableView()
         mockView.dataSource = sut
         mockView.register(MockItemCell.self, forCellReuseIdentifier: "ItemCell")
-        sut.itemManager?.add(ToDoItem(title: "Foo"))
+        let item = ToDoItem(title: "Foo")
+        sut.itemManager?.add(item)
         mockView.reloadData()
         
         let cell = mockView.cellForRow(at: IndexPath(row: 0, section: 0)) as! MockItemCell
         
-        XCTAssertTrue(cell.configCellCalled)
+        XCTAssertEqual(cell.cachedItem!, item)
     }
 }
 
