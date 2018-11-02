@@ -24,6 +24,7 @@ class ItemListDataProviderTests: XCTestCase {
         
         tableView = controller.tableView
         tableView.dataSource = sut
+        tableView.dataSource = sut
     }
 
     override func tearDown() {
@@ -66,9 +67,7 @@ class ItemListDataProviderTests: XCTestCase {
     }
     
     func test_CellForRow_DequeuesCellFromTableView() {
-        let mockView = MockTableView()
-        mockView.dataSource = sut
-        mockView.register(ItemCell.self, forCellReuseIdentifier: "ItemCell")
+        let mockView = MockTableView.mockTableView(with: sut)
         sut.itemManager?.add(ToDoItem(title: "Foo"))
         mockView.reloadData()
         
@@ -78,9 +77,7 @@ class ItemListDataProviderTests: XCTestCase {
     }
     
     func test_CellForRow_CallsConfigCell() {
-        let mockView = MockTableView()
-        mockView.dataSource = sut
-        mockView.register(MockItemCell.self, forCellReuseIdentifier: "ItemCell")
+        let mockView = MockTableView.mockTableView(with: sut)
         let item = ToDoItem(title: "Foo")
         sut.itemManager?.add(item)
         mockView.reloadData()
@@ -88,6 +85,29 @@ class ItemListDataProviderTests: XCTestCase {
         let cell = mockView.cellForRow(at: IndexPath(row: 0, section: 0)) as! MockItemCell
         
         XCTAssertEqual(cell.cachedItem!, item)
+    }
+    
+    func test_CellForRow_Section2_CallsConfigCellWithDoneItem() {
+        let mockView = MockTableView.mockTableView(with: sut)
+        
+        sut.itemManager?.add(ToDoItem(title: "Foo"))
+        let second = ToDoItem(title: "Bar")
+        sut.itemManager?.add(second)
+        sut.itemManager?.checkItem(at: 1)
+        mockView.reloadData()
+        
+        let cell = mockView.cellForRow(at: IndexPath(row: 0, section: 1)) as! MockItemCell
+        XCTAssertEqual(cell.cachedItem, second)
+    }
+    
+    func test_DeleteButton_InFirstSection_ShowsTitleCheck() {
+        let deleteButtonTitle = tableView.delegate?.tableView?(tableView, titleForDeleteConfirmationButtonForRowAt: IndexPath(row: 0, section: 0))
+        XCTAssertEqual(deleteButtonTitle, "Check")
+    }
+    
+    func test_DeleteButton_InSecondSection_ShowsTitleUncheck() {
+        let deleteButtonTitle = tableView.delegate?.tableView?(tableView, titleForDeleteConfirmationButtonForRowAt: IndexPath(row: 0, section: 1))
+        XCTAssertEqual(deleteButtonTitle, "Uncheck")
     }
 }
 
@@ -98,6 +118,12 @@ extension ItemListDataProviderTests {
         override func dequeueReusableCell(withIdentifier identifier: String, for indexPath: IndexPath) -> UITableViewCell {
             cellGotDequeued = true
             return super.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
+        }
+        class func mockTableView(with dataSource: UITableViewDataSource) -> MockTableView {
+            let mockView = MockTableView(frame: CGRect(x: 0, y: 0, width: 320, height: 480), style: .plain)
+            mockView.dataSource = dataSource
+            mockView.register(MockItemCell.self, forCellReuseIdentifier: "ItemCell")
+            return mockView
         }
     }
     

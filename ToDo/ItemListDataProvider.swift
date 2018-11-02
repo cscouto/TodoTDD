@@ -36,10 +36,28 @@ class ItemListDataProvider: NSObject, UITableViewDataSource, UITableViewDelegate
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemCell
-        if let item = itemManager?.item(at: indexPath.row) {
-            cell.configCell(with: item)
+        guard let itemManager = itemManager else { fatalError() }
+        guard let section = Section(rawValue: indexPath.section) else { fatalError() }
+        
+        let item: ToDoItem
+        switch section {
+        case .toDo:
+            item = itemManager.item(at: indexPath.row)
+        case .done:
+            item = itemManager.doneItem(at: indexPath.row)
         }
+        cell.configCell(with: item)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        guard let section = Section(rawValue: indexPath.section) else { fatalError() }
+        switch section {
+        case .toDo:
+            return "Check"
+        case .done:
+            return "Uncheck"
+        }
     }
 
 }
