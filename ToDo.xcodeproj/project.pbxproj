@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		751EF20521767A9E00424C84 /* ItemListDataProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751EF20421767A9E00424C84 /* ItemListDataProviderTests.swift */; };
 		753C3873218CE7180053C475 /* ItemCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753C3872218CE7180053C475 /* ItemCellTests.swift */; };
+		753C387521909A970053C475 /* DetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753C387421909A970053C475 /* DetailViewControllerTests.swift */; };
+		753C387721909B090053C475 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753C387621909B090053C475 /* DetailViewController.swift */; };
+		753C387A2190A0240053C475 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 753C38792190A0240053C475 /* MapKit.framework */; };
 		757F6454217632330030844E /* ItemListDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757F6453217632330030844E /* ItemListDataProvider.swift */; };
 		758806AA2178D5F800791E0E /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758806A92178D5F800791E0E /* ItemCell.swift */; };
 		75ACEDDC216E9EA400AEE185 /* TodoItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75ACEDDB216E9EA400AEE185 /* TodoItemTests.swift */; };
@@ -38,6 +41,9 @@
 /* Begin PBXFileReference section */
 		751EF20421767A9E00424C84 /* ItemListDataProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListDataProviderTests.swift; sourceTree = "<group>"; };
 		753C3872218CE7180053C475 /* ItemCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCellTests.swift; sourceTree = "<group>"; };
+		753C387421909A970053C475 /* DetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewControllerTests.swift; sourceTree = "<group>"; };
+		753C387621909B090053C475 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		753C38792190A0240053C475 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		757F6453217632330030844E /* ItemListDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListDataProvider.swift; sourceTree = "<group>"; };
 		758806A92178D5F800791E0E /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		75ACEDDB216E9EA400AEE185 /* TodoItemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItemTests.swift; sourceTree = "<group>"; };
@@ -63,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				753C387A2190A0240053C475 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +83,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		753C38782190A0240053C475 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				753C38792190A0240053C475 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		75ACEDE5216EAAB900AEE185 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +117,7 @@
 				75DDD16A216E940700CA7959 /* ToDo */,
 				75DDD17F216E940800CA7959 /* ToDoTests */,
 				75DDD169216E940700CA7959 /* Products */,
+				753C38782190A0240053C475 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -126,6 +142,7 @@
 				75DDD177216E940800CA7959 /* Info.plist */,
 				757F6453217632330030844E /* ItemListDataProvider.swift */,
 				758806A92178D5F800791E0E /* ItemCell.swift */,
+				753C387621909B090053C475 /* DetailViewController.swift */,
 			);
 			path = ToDo;
 			sourceTree = "<group>";
@@ -135,6 +152,7 @@
 			children = (
 				75ACEDE7216EAAD500AEE185 /* Model */,
 				75DDD182216E940800CA7959 /* Info.plist */,
+				753C387421909A970053C475 /* DetailViewControllerTests.swift */,
 				75B0C1492171465900E76D76 /* ItemListViewControllerTests.swift */,
 				751EF20421767A9E00424C84 /* ItemListDataProviderTests.swift */,
 				753C3872218CE7180053C475 /* ItemCellTests.swift */,
@@ -192,6 +210,11 @@
 				TargetAttributes = {
 					75DDD167216E940700CA7959 = {
 						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					75DDD17B216E940800CA7959 = {
 						CreatedOnToolsVersion = 10.0;
@@ -250,6 +273,7 @@
 				758806AA2178D5F800791E0E /* ItemCell.swift in Sources */,
 				75ACEDDE216EA04500AEE185 /* ToDoItem.swift in Sources */,
 				75B0C14C217146DA00E76D76 /* ItemListViewController.swift in Sources */,
+				753C387721909B090053C475 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +285,7 @@
 				751EF20521767A9E00424C84 /* ItemListDataProviderTests.swift in Sources */,
 				75ACEDE9216EAAF900AEE185 /* ItemManagerTests.swift in Sources */,
 				75B0C14A2171465900E76D76 /* ItemListViewControllerTests.swift in Sources */,
+				753C387521909A970053C475 /* DetailViewControllerTests.swift in Sources */,
 				75ACEDE4216EA80B00AEE185 /* LocationTests.swift in Sources */,
 				75ACEDDC216E9EA400AEE185 /* TodoItemTests.swift in Sources */,
 			);
