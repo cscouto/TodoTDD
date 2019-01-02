@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75096F8121DD431800CCF5F8 /* InputViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75096F8021DD431800CCF5F8 /* InputViewControllerTests.swift */; };
+		75096F8321DD433600CCF5F8 /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75096F8221DD433600CCF5F8 /* InputViewController.swift */; };
 		751EF20521767A9E00424C84 /* ItemListDataProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751EF20421767A9E00424C84 /* ItemListDataProviderTests.swift */; };
 		753C3873218CE7180053C475 /* ItemCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753C3872218CE7180053C475 /* ItemCellTests.swift */; };
 		753C387521909A970053C475 /* DetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753C387421909A970053C475 /* DetailViewControllerTests.swift */; };
@@ -39,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		75096F8021DD431800CCF5F8 /* InputViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewControllerTests.swift; sourceTree = "<group>"; };
+		75096F8221DD433600CCF5F8 /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
 		751EF20421767A9E00424C84 /* ItemListDataProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListDataProviderTests.swift; sourceTree = "<group>"; };
 		753C3872218CE7180053C475 /* ItemCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCellTests.swift; sourceTree = "<group>"; };
 		753C387421909A970053C475 /* DetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewControllerTests.swift; sourceTree = "<group>"; };
@@ -143,6 +147,7 @@
 				757F6453217632330030844E /* ItemListDataProvider.swift */,
 				758806A92178D5F800791E0E /* ItemCell.swift */,
 				753C387621909B090053C475 /* DetailViewController.swift */,
+				75096F8221DD433600CCF5F8 /* InputViewController.swift */,
 			);
 			path = ToDo;
 			sourceTree = "<group>";
@@ -156,6 +161,7 @@
 				75B0C1492171465900E76D76 /* ItemListViewControllerTests.swift */,
 				751EF20421767A9E00424C84 /* ItemListDataProviderTests.swift */,
 				753C3872218CE7180053C475 /* ItemCellTests.swift */,
+				75096F8021DD431800CCF5F8 /* InputViewControllerTests.swift */,
 			);
 			path = ToDoTests;
 			sourceTree = "<group>";
@@ -266,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75096F8321DD433600CCF5F8 /* InputViewController.swift in Sources */,
 				75ACEDEB216EABDA00AEE185 /* ItemManager.swift in Sources */,
 				757F6454217632330030844E /* ItemListDataProvider.swift in Sources */,
 				75DDD16C216E940700CA7959 /* AppDelegate.swift in Sources */,
@@ -284,6 +291,7 @@
 				753C3873218CE7180053C475 /* ItemCellTests.swift in Sources */,
 				751EF20521767A9E00424C84 /* ItemListDataProviderTests.swift in Sources */,
 				75ACEDE9216EAAF900AEE185 /* ItemManagerTests.swift in Sources */,
+				75096F8121DD431800CCF5F8 /* InputViewControllerTests.swift in Sources */,
 				75B0C14A2171465900E76D76 /* ItemListViewControllerTests.swift in Sources */,
 				753C387521909A970053C475 /* DetailViewControllerTests.swift in Sources */,
 				75ACEDE4216EA80B00AEE185 /* LocationTests.swift in Sources */,
